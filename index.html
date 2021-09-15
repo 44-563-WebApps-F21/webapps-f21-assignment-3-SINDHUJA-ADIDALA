@@ -62,6 +62,31 @@
       <td>$1.96</td></tr>
     </table>
     </hr>
+    <hr><h5>Z-function and its calculation</h5>
+    <blockquote><q>This algorithm finds all occurrences of a pattern in a text in linear time. Let length of text be n and of pattern be m, then total time taken is O(m + n) with linear space complexity.<br> Now we can see that both time and space complexity is same as KMP algorithm but this algorithm is Simpler to understand.
+      In this algorithm, we construct a Z array.
+    </q></blockquote>
+    <a href=https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/ >Source link for definition </a><br>
+    
+    <pre>
+    ```
+    vector<int> z_function_trivial(string s) {
+      int n = (int) s.length();
+      vector<int> z(n);
+      for (int i = 1; i < n; ++i)
+          while (i + z[i] < n && s[z[i]] == s[i + z[i]])
+              ++z[i];
+      return z;
+  }
+    ```
+    </pre>
+    
+    <br>
+    <a href=https://cp-algorithms.com/string/z-function.html >Source link for code </a>
+    
+    
+    
+    </hr>
     
 </html>
 
